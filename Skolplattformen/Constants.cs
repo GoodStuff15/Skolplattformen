@@ -1,6 +1,6 @@
 ﻿namespace Skolplattformen
 {
-    public class Constants
+    public static class Constants
     {
         public static readonly ConsoleKey[] validKeys =
                                      {ConsoleKey.A,
@@ -30,5 +30,7 @@
                                       ConsoleKey.Z};
 
         public const int columnSpacing = -20;
+
+        public const string connectionString = @"Data Source=DESKTOP-IGVAOCU;Database=Labb2; Integrated Security=True;Trust Server Certificate=True;";
     }
 }

@@ -38,6 +38,13 @@ namespace Skolplattformen
 
         public void ViewStudent()
         {
+            var dbh = new DBHandler();
+            var studentGrades = dbh.GetStudentGrades(1068);
+            foreach(StudentGrade g in studentGrades)
+            {
+                Console.WriteLine($"{g.GradeScale.GradeName}");
+            }
+            Console.ReadKey();
 
         }
 
