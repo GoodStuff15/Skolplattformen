@@ -28,5 +28,7 @@
                                       ConsoleKey.X,
                                       ConsoleKey.Y,
                                       ConsoleKey.Z};
+
+        public const int columnSpacing = -20;
     }
 }
