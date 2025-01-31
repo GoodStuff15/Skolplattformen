@@ -27,12 +27,13 @@ namespace Skolplattformen
             var dbh = new DBHandler();
 
             var allStudents = dbh.GetAllStudents().OrderBy(s => s.Class.ClassName); // gets list as ienumerable, arranged by class
-            
+            Console.WriteLine($"{"First Name",Constants.columnSpacing}|{"Last Name",Constants.columnSpacing}|{"Person Number",Constants.columnSpacing}|{"Gender",Constants.columnSpacing / 2}|{"Class",Constants.columnSpacing}");
             foreach(Student s in allStudents)
             {
-                Console.WriteLine($"{s.StudentName} {s.StudentLname} is in class {s.Class.ClassName}");
+                Console.WriteLine($"{s.StudentName,Constants.columnSpacing} {s.StudentLname,Constants.columnSpacing} {s.PersonNumber,Constants.columnSpacing} {s.Gender,Constants.columnSpacing / 2} {s.Class.ClassName,Constants.columnSpacing}");
             }
-            Console.ReadLine();
+            Console.WriteLine("Press any key to return to Student Menu");
+            Console.ReadKey(true);
         }
 
         public void ViewStudent()
