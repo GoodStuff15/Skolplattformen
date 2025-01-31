@@ -1,4 +1,5 @@
-﻿namespace Skolplattformen
+﻿using Skolplattformen.Models;
+namespace Skolplattformen
 {
     public class StudentMenu : Menu
     {
@@ -23,7 +24,15 @@
 
         public void ViewAllStudents()
         {
+            var dbh = new DBHandler();
 
+            var allStudents = dbh.GetAllStudents().OrderBy(s => s.Class.ClassName); // gets list as ienumerable, arranged by class
+            
+            foreach(Student s in allStudents)
+            {
+                Console.WriteLine($"{s.StudentName} {s.StudentLname} is in class {s.Class.ClassName}");
+            }
+            Console.ReadLine();
         }
 
         public void ViewStudent()
