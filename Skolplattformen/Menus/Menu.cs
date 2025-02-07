@@ -1,4 +1,5 @@
-﻿namespace Skolplattformen
+﻿
+namespace Skolplattformen
 {
     public abstract class Menu
     {
@@ -6,10 +7,9 @@
 
         public delegate void MenuOptionDelegates();
 
-        public MenuOptionDelegates[]? MenuOptions;
-
-        public bool Viewing { get; private set; } = true;
-
+        public MenuOptionDelegates[]? MenuOptions { get; set; }
+        public bool Viewing { get; set; } = true;
+        
         public void ExitMenu()
         {
             Viewing = false;
