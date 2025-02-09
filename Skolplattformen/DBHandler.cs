@@ -14,7 +14,7 @@ namespace Skolplattformen
         // ADO.NET Methods
         public decimal TotalSalaryOfUnit(int unitId)
         {
-            string query = @"SELECT SUM(Staff.Salary) FROM Staff 
+            string query = @$"SELECT SUM(Staff.Salary) FROM Staff 
                             JOIN Unit ON Unit_Id = Unit.Id WHERE Unit_Id = {unitId}";
 
             decimal sum = 0;
@@ -43,7 +43,7 @@ namespace Skolplattformen
         }
         public decimal AverageSalaryOfUnit(int unitId)
         {
-            string query = @"SELECT AVG(Staff.Salary) FROM Staff JOIN Unit ON Unit_Id = Unit.Id WHERE Unit_Id = {unitId}";
+            string query = @$"SELECT AVG(Staff.Salary) FROM Staff JOIN Unit ON Unit_Id = Unit.Id WHERE Unit_Id = {unitId}";
             decimal avg = 0;
             try
             {
